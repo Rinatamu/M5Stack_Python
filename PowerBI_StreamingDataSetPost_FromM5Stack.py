@@ -12,7 +12,7 @@ lcd.clear()
 class powerbi:
     def __init__(self):
         self.rtc = machine.RTC()
-        self.rtc.ntp_sync('ntp.nict.jp', update_period=3600 , tz='JST-9')
+        self.rtc.ntp_sync('ntp.nict.jp', update_period=3600)
         
         # PowerBI ストリーミングデータセットのURLを入れる
         self.posturl = ''
