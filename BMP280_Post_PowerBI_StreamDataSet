@@ -21,6 +21,7 @@ for i in range(100):
     if rtc.synced():
         print('ntp synced.')
         lcd.print('ntp synced.',10,10)
+        lcd.clear()
         break
     print(i, end=' ')
     time.sleep_ms(10)
@@ -48,13 +49,12 @@ class sensordata:
 
     def bme280(self):
         bme280sensor = bme280.BME280(i2c=i2c)
-        sendordata = bme280sensor.values
-        self.temp  = sendordata[0]
-        self.humi  = sendordata[2]
-        self.pres  = sendordata[1]
+        sensordata = bme280sensor.values
+        self.temp  = sensordata[0]
+        self.humi  = sensordata[2]
+        self.pres  = sensordata[1]
 
     def display(self):
-        lcd.clear()
         lcd.print(self.temp,10,10)
         lcd.print(self.humi,10,30)
         lcd.print(self.pres,10,50)
@@ -91,4 +91,4 @@ while True:
     sensor.bme280()
     sensor.display()
     sensor.postpowerbi()
-    time.sleep_ms(4000)
+    time.sleep(10)
