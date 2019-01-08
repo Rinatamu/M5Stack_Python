@@ -27,7 +27,7 @@ for i in range(100):
 
 class sensordata:
     def __init__(self):
-        self.posturl = 'https://api.powerbi.com/beta/37dfff33-d988-46f6-b952-590aba2b92e6/datasets/4bbecf96-35a1-4d4c-a835-15c71434b7e4/rows?key=2TdxEbYhaPu96BsPHTea%2Fzr2wKsOYxQVfGW0zs8hdM4%2BdJkf8BQF37vz1uO1z5B8ycJQ%2Fq%2BtHnHrJmzbo3vXsg%3D%3D'
+        self.posturl = ''
 
     def timeset(self):
         timedata = rtc.now()
